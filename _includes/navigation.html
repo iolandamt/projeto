@@ -1,0 +1,11 @@
+<nav>
+    <h1><a href="{{ site.baseurl }}/">Iolanda Tavares</a></h1>
+    <ul>
+        {% for navigation in site.data.nav_geral.docs %}
+        <li>
+            <a href="{{ site.baseurl }}/{{ navigation.url }}">{{ navigation.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+

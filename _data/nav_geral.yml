@@ -1,0 +1,12 @@
+docs_list_title: navigation
+docs:
+
+
+- title: About
+  url: about
+
+- title: Work
+  url: myprojects
+
+- title: Contact
+  url: contact
