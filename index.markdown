@@ -2,6 +2,6 @@
 layout: home
 ---
 
-<h1> Morrendo </h1>
+<h1> Iolanda Tavares </h1>
 <!-- aqui fica o conteúdo da home-->
 
