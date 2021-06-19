@@ -1,8 +1,17 @@
 <nav>
     <ul>
         {% for project in site.projects %}
-            <li><a href="{{ site.baseurl }}/{{project.url}}"><img src="{{project.image-src}}"> {{ project.title }}</a></li>
+        <li>
+            <a href="{{ site.baseurl }}/{{project.url}}">
+                <div class="projectimage">
+                    <img src="{{project.image-src}}" class="thumbnail">
+                    <div class="overlay">
+                        <p>{{project.title}}</p>
+                    </div>
+                </div>
+            </a>
+        </li>
             
-            {% endfor %}
+        {% endfor %}
     </ul>
 </nav>

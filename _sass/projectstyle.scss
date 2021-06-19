@@ -1,0 +1,431 @@
+@import "colors";
+@import "typography";
+@import "spacing";
+@import "mediaqueries";
+
+body {
+    @include myfont;
+    background-color: $neutralw-color;
+    margin: 0px;
+    padding: 0;
+}
+
+header{
+    background-color: $secondary-color;
+    position: fixed;
+    width: 100%;
+    height: $xxx-sp;
+    top:0px;
+    z-index: 1;
+
+
+    nav {
+        @media #{ $fbg-medium } {
+            display: flex;
+            
+        }
+        h1 {
+            @include navlogo;
+            padding: $m-sp $m-sp $xxs-sp $m-sp ;
+            
+            @media #{ $fbg-medium } {
+                padding: 30px 0px 0px 60px;
+                margin: 0;
+                width: 100%;
+                
+            }
+        }
+        ul {
+            @include navtitle;
+            list-style-type: none; 
+            display: flex;
+            justify-content: space-between;
+            padding: $xxs-sp $m-sp $xs-sp $m-sp;
+            max-width: 300px;
+            
+            @media #{ $fbg-medium } {
+                padding: 30px 60px;
+                width: 100%;
+                
+        
+            }
+            
+        }
+        a {
+            text-decoration: none;
+            color: $primary-color;
+        }
+        a:hover{
+            color: $neutralb-color;
+        }
+        
+    }
+
+}
+
+footer{
+    background-color: $primary-color;
+    height: 155px;
+    div{
+
+        h1{
+            @include project-title;
+            padding: $m-sp;
+            
+        }
+        p{
+            @include project-paragraph;
+            padding: $s-sp $m-sp;
+            
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            max-width: 300px;
+            padding: 0 $m-sp;
+        }
+        a{
+            @include project-paragraph;
+            text-decoration: none;
+        }
+    }
+}
+
+/* Home page*/
+.banner {
+    max-height: 635px;
+    background-image: url(images/transfundo_home-01.png);
+    div {
+        padding: 10% 0% 15%;
+        justify-content: center;
+
+        h1 {
+            @include heading1;
+            text-align: center;
+            padding: 120px 20px 40px;
+        }
+        p {
+            @include paragraph;
+            max-width: 600px;
+            padding: $m-sp;
+            margin: auto; 
+        }
+    }
+}
+.recentwork {
+    margin: $m-sp 0;
+    overflow: hidden;
+    
+    h2 {
+        @include heading2;
+        position: relative;
+        padding: $m-sp;
+        
+    }
+    h2::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background:$primary-color;
+        position: absolute;
+        top: 50%;
+        margin-left: 1rem;
+    }
+    
+   ul{
+        list-style-type: none;
+        margin: $m-sp; 
+        padding: 0;
+
+        li{
+            padding-bottom: $xl-sp;
+        }
+
+        .projectimage{
+            margin: 0;
+            position: relative;
+            max-width: 860px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img {
+            width: 100%;
+            max-width: 860px;  
+            display: block;
+
+       }
+       .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: $primary-color;
+        }
+       .projectimage:hover .overlay {
+           opacity: 1;
+       }
+       p{
+        @include project-title;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+       }
+       
+    }
+    
+}
+
+/* About page*/
+.sectitle{
+    padding-top: $ux-sp;
+    overflow: hidden;
+
+    h1 {
+        @include heading2;
+        position: relative;
+        padding: $m-sp;
+        
+    }
+    h1::after {
+        content: '';
+        width: 90%;
+        height: 2px;
+        background:$primary-color;
+        position: absolute;
+        top: 50%;
+        margin-left: 1rem;
+    }
+}
+
+.presentation{
+    margin: $m-sp;
+    background-color: $secondary-color;
+    @media #{ $fbg-medium } {
+        margin: 20px 60px;
+        display: flex;
+    }
+    figure{
+        margin: 0;
+        @media #{ $fbg-medium } {
+            width: 50%;
+        }
+        img{
+            width: 100%;
+            margin: auto;
+        }
+    }
+    div{
+        margin: $m-sp;
+        @media #{ $fbg-medium } {
+            width: 50%;
+            margin: 5%;
+        }
+        h2{
+            @include heading2;
+            padding-top: 5%;
+            
+        }
+        p{
+            @include paragraph;
+            padding: $l-sp 0;
+        
+    
+        }
+
+    }
+
+}
+
+h3{
+    @include heading3;
+    margin: $xl-sp $m-sp $s-sp;
+}
+
+
+.container-total{
+    margin-bottom: $l-sp;
+    @media #{ $fbg-medium } {
+        display: flex;
+    }
+    div{
+        padding: $m-sp;
+        @media #{ $fbg-medium } {
+            width: 33%;
+        }
+
+        h4{
+            @include heading4;
+            padding-bottom: $s-sp;
+        }
+        p{
+            @include paragraph-highlight;
+        }
+        .summary{
+            @include paragraph;
+            padding-top: $s-sp;
+        }
+
+    }
+
+}
+
+/* Contact page*/
+.text_content{
+    margin: $m-sp;
+    height: 100vh;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+
+        a{
+            text-decoration: none;
+        }
+
+    }
+}
+
+/* Project page*/
+.project-cover{
+    margin: $xxl-sp 0 0;
+    figure{
+        margin: 0;
+        overflow: hidden;
+        max-height: 555px;
+        
+        img{
+            width: 100%;
+            display: block; 
+        }
+    }
+    
+ 
+}
+
+.about-project{
+    background-color: $primary-color;
+    padding: $l-sp $m-sp;
+    @media #{ $fbg-medium } {
+        display: flex;
+    
+    }
+    .collum1{
+        @media #{ $fbg-medium } {
+            width: 40%;
+            margin: 0 4%;
+            margin-right: 30px;
+        }
+
+        .title-content{
+            h1{
+                @include project-title;
+                padding-bottom: $xs-sp;
+            }
+            h2{
+                @include project-subtitle;
+                padding-bottom: $l-sp;
+            }
+    
+        }
+    
+        .extra-info{
+            
+            p{
+                @include project-caption;
+                opacity: 70%;
+            }
+    
+        }
+
+    }
+
+    
+    .text{
+        @media #{ $fbg-medium } {
+            max-width: 60%;
+            margin: 0 4%;
+
+        }
+        
+        p{
+            @include project-paragraph;
+            padding: $l-sp 0 $s-sp;
+        }
+        a{
+            @include project-caption;
+            
+        }
+
+    }
+
+}
+
+.gallery{
+    position: relative;
+    height: auto;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: $xl-sp 0;
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: $s-sp;
+    grid-auto-flow:dense;
+    
+    .photo{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }    
+    }
+    .photo:first-child{
+        grid-column-start: span 2;
+        grid-row-start: span 1;
+    }
+    .photo:nth-child(2n+3){
+        grid-row-start: span 1;
+  
+    }
+
+    .photo:nth-child(3n+4){
+        grid-column-start: span 2;
+        
+        
+    }
+    .photo:nth-child(4n+5){
+        grid-column-start: span 1;
+       
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
